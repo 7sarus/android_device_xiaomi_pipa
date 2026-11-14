@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, hardware/dolby/dolby.mk)
 
 PRODUCT_PACKAGES += \
-    DolbyAtmos
+    LunarisDolby
 
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -348,7 +348,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel/power-libperfmgr \
-    hardware/bliss/interfaces/power-libperfmgr \
+    hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc

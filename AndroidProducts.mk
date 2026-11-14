@@ -4,4 +4,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bliss_pipa.mk
+    $(LOCAL_DIR)/lineage_pipa.mk \
+    $(LOCAL_DIR)/crdroid_pipa.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_pipa-user \
+    lineage_pipa-userdebug \
+    lineage_pipa-eng

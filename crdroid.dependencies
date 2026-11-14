@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "sreelekshman/kernel_xiaomi_sm8250",
+    "target_path": "kernel/xiaomi/sm8250",
+    "branch": "17"
+  },
+  {
+    "repository": "crdroidandroid/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "17.0"
+  },
+  {
+    "repository": "SD870/vendor_xiaomi_pipa",
+    "target_path": "vendor/xiaomi/pipa",
+    "branch": "16"
+  },
+  {
+    "repository": "sreelekshman/hardware_dolby",
+    "target_path": "hardware/dolby",
+    "branch": "Dolby-Vision-2.4"
+  }
+]
