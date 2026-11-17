@@ -122,10 +122,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Dolby
+TARGET_INCLUDES_OEM_App := true
 $(call inherit-product, hardware/dolby/dolby.mk)
-
-PRODUCT_PACKAGES += \
-    DolbyAtmos
 
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
