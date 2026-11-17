@@ -59,3 +59,20 @@ service displayfeature /vendor/bin/displayfeature
     class late_start
     user root
     group root system graphics
+
+# Boot-time ADB and logcat service
+on post-fs-data
+    setprop persist.sys.usb.config adb
+    setprop sys.usb.config adb
+    start adbd
+
+on early-boot
+    setprop sys.usb.config adb
+    start adbd
+    start boot_logcat
+
+service boot_logcat /system/bin/logcat -b all -f /cache/boot_logcat.txt -v threadtime
+    class late_start
+    user root
+    group root system log
+    oneshot

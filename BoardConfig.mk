@@ -76,6 +76,8 @@ TARGET_USES_YCRCB_CAMERA_ENCODE := true
 
 # Display
 TARGET_SCREEN_DENSITY := 350
+TARGET_SCREEN_HEIGHT := 2880
+TARGET_SCREEN_WIDTH := 1800
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x546C00000000
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
 TARGET_NO_RAW10_CUSTOM_FORMAT := true
@@ -95,6 +97,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 an
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=qcom
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += kpti=off
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -109,6 +112,10 @@ TARGET_KERNEL_CONFIG := \
 # Kernel Clang Flags
 KERNEL_CC := CC=clang
 override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    CROSS_COMPILE=aarch64-linux-gnu- \
+    LLVM_IAS=1 \
+    KCFLAGS="-Wno-default-const-init-var-unsafe -Wno-default-const-init-field-unsafe -Wno-implicit-enum-enum-cast"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)

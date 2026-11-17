@@ -122,8 +122,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Dolby
-$(call inherit-product, hardware/dolby/dolby.mk)
-
 PRODUCT_PACKAGES += \
     LunarisDolby
 
@@ -350,6 +348,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel/power-libperfmgr \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
+    hardware/qcom-caf/sm8250 \
+    hardware/qcom-caf/wlan \
+    hardware/qcom-caf/wlan/qcwcn \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
